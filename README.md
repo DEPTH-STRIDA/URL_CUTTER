@@ -1,61 +1,132 @@
-# Внимание!!!
-# Это тестовый код. Он имеет множество ошибок и опасных моментов.
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>URL Shortener Microservice</title>
+</head>
+<body>
 
-# Описание микросервиса для сокращения URL
+<h1>Внимание!!!</h1>
+<h2>Это тестовый код. Он имеет множество ошибок и опасных моментов.</h2>
 
-Этот микросервис создан в соответствии с **техническим заданием (ТЗ)**, чтобы обеспечить функционал сокращения URL-адресов. Основная цель микросервиса - создание коротких URL, которые могут быть использованы вместо длинных URL-адресов.
+<h2>Описание микросервиса для сокращения URL</h2>
+<p>Этот микросервис создан в соответствии с <strong>техническим заданием (ТЗ)</strong>, чтобы обеспечить функционал сокращения URL-адресов. Основная цель микросервиса - создание коротких URL, которые могут быть использованы вместо длинных URL-адресов.</p>
 
-## Основные требования
+<h3>Основные требования</h3>
+<ul>
+    <li>Длина сокращенного URL-адреса должна быть <em>как можно короче</em>.</li>
+    <li>Сокращенный URL может содержать цифры (<code>0-9</code>) и буквы (<code>a-z</code>, <code>A-Z</code>).</li>
+</ul>
 
-- Длина сокращенного URL-адреса должна быть *как можно короче*.
-- Сокращенный URL может содержать цифры (`0-9`) и буквы (`a-z`, `A-Z`).
+<h3>Эндпоинты</h3>
 
-## Эндпоинты
+<h4>1. Создание сокращенного URL</h4>
+<ul>
+    <li><strong>Метод</strong>: POST</li>
+    <li><strong>URL</strong>: <a href="http://localhost:8080/">http://localhost:8080/</a></li>
+    <li><strong>Request (body)</strong>: <br>
+    <code>http://cjdr17afeihmk.biz/123/kdni9/z9d112423421</code></li>
+    <li><strong>Response</strong>: <br>
+    <code>http://localhost:8080/qtj5opu</code></li>
+</ul>
 
-### 1. Создание сокращенного URL
+<h4>2. Получение полного URL по сокращенному URL</h4>
+<ul>
+    <li><strong>Метод</strong>: GET</li>
+    <li><strong>URL</strong>: <a href="http://localhost:8080/qtj5opu">http://localhost:8080/qtj5opu</a></li>
+    <li><strong>Request (url query)</strong>: <br>
+    <code>http://localhost:8080/qtj5opu</code></li>
+    <li><strong>Response (body)</strong>: <br>
+    <code>http://cjdr17afeihmk.biz/123/kdni9/z9d112423421</code></li>
+</ul>
 
-- **Метод**: POST
-- **URL**: [http://localhost:8080/](http://localhost:8080/)
-- **Request (body)**: 
-http://cjdr17afeihmk.biz/123/kdni9/z9d112423421
+<h3>Хранение данных</h3>
+<p>Микросервис имеет возможность хранить информацию в <em>памяти</em> или в базе данных <em>PostgreSQL</em> в зависимости от флага запуска.</p>
 
-- **Response**: 
-http://localhost:8080/qtj5opu
+<h3>Язык программирования</h3>
+<p>Этот микросервис написан на языке программирования <em>Go</em> (Golang), обеспечивая <em>быстродействие</em> и <em>эффективное использование ресурсов</em>.</p>
 
-### 2. Получение полного URL по сокращенному URL
+<h3>Зависимости</h3>
+<p>Для работы микросервиса требуется наличие <em>Go</em> версии X.X.X и установленных зависимостей, указанных в файле <code>go.mod</code>.</p>
 
-- **Метод**: GET
-- **URL**: [http://localhost:8080/qtj5opu](http://localhost:8080/qtj5opu)
-- **Request (url query)**: 
-http://localhost:8080/qtj5opu
+<h3>Использование</h3>
+<p>Чтобы запустить микросервис, выполните следующие шаги:</p>
+<ol>
+    <li>Клонируйте репозиторий на локальную машину.</li>
+    <li>Убедитесь, что все зависимости установлены с помощью <code>go mod tidy</code>.</li>
+    <li>Используйте <code>go build</code> для сборки проекта.</li>
+    <li>Запустите исполняемый файл, указав необходимые параметры (например, флаг хранения данных).</li>
+</ol>
 
-- **Response (body)**: 
-http://cjdr17afeihmk.biz/123/kdni9/z9d112423421
+<h3>Автор</h3>
+<p>Если у вас есть какие-либо вопросы или предложения по улучшению функционала, не стесняйтесь создавать <em>issues</em> или отправлять <em>pull requests</em> в репозиторий проекта. <em>Ваш вклад приветствуется!</em></p>
 
-## Хранение данных
+<p><strong>Автор</strong>: Тихомиров Максим Русланович<br>
+<strong>Контактная информация</strong>: <a href="mailto:awesome.gail@yandex.ru">awesome.gail@yandex.ru</a>, <a href="https://t.me/Tichomirov2003">Telegram</a></p>
 
-Микросервис имеет возможность хранить информацию в *памяти* или в базе данных *PostgreSQL* в зависимости от флага запуска.
+<!-- Language Switcher -->
+<a href="#english-version">English Version</a> | <a href="#русская-версия">Русская версия</a>
 
-## Язык программирования
+<hr>
 
-Этот микросервис написан на языке программирования *Go* (Golang), обеспечивая *быстродействие* и *эффективное использование ресурсов*.
+<!-- English Version -->
+<h2 id="english-version">Attention!!!</h2>
+<h2>This is test code. It has many errors and dangerous issues.</h2>
 
-## Зависимости
+<h2>Description of the URL Shortener Microservice</h2>
+<p>This microservice is created according to the <strong>technical specification (TS)</strong> to provide URL shortening functionality. The main goal of the microservice is to create short URLs that can be used instead of long URLs.</p>
 
-Для работы микросервиса требуется наличие *Go* версии X.X.X и установленных зависимостей, указанных в файле `go.mod`.
+<h3>Main Requirements</h3>
+<ul>
+    <li>The length of the shortened URL should be <em>as short as possible</em>.</li>
+    <li>The shortened URL may contain digits (<code>0-9</code>) and letters (<code>a-z</code>, <code>A-Z</code>).</li>
+</ul>
 
-## Использование
+<h3>Endpoints</h3>
 
-Чтобы запустить микросервис, выполните следующие шаги:
+<h4>1. Create a shortened URL</h4>
+<ul>
+    <li><strong>Method</strong>: POST</li>
+    <li><strong>URL</strong>: <a href="http://localhost:8080/">http://localhost:8080/</a></li>
+    <li><strong>Request (body)</strong>: <br>
+    <code>http://cjdr17afeihmk.biz/123/kdni9/z9d112423421</code></li>
+    <li><strong>Response</strong>: <br>
+    <code>http://localhost:8080/qtj5opu</code></li>
+</ul>
 
-1. Клонируйте репозиторий на локальную машину.
-2. Убедитесь, что все зависимости установлены с помощью `go mod tidy`.
-3. Используйте `go build` для сборки проекта.
-4. Запустите исполняемый файл, указав необходимые параметры (например, флаг хранения данных).
+<h4>2. Get the full URL by the shortened URL</h4>
+<ul>
+    <li><strong>Method</strong>: GET</li>
+    <li><strong>URL</strong>: <a href="http://localhost:8080/qtj5opu">http://localhost:8080/qtj5opu</a></li>
+    <li><strong>Request (url query)</strong>: <br>
+    <code>http://localhost:8080/qtj5opu</code></li>
+    <li><strong>Response (body)</strong>: <br>
+    <code>http://cjdr17afeihmk.biz/123/kdni9/z9d112423421</code></li>
+</ul>
 
-## Автор
+<h3>Data Storage</h3>
+<p>The microservice can store information either <em>in memory</em> or in a <em>PostgreSQL database</em> depending on the startup flag.</p>
 
-Если у вас есть какие-либо вопросы или предложения по улучшению функционала, не стесняйтесь создавать *issues* или отправлять *pull requests* в репозиторий проекта. *Ваш вклад приветствуется!*
+<h3>Programming Language</h3>
+<p>This microservice is written in the <em>Go</em> programming language (Golang), ensuring <em>high performance</em> and <em>efficient resource usage</em>.</p>
 
-**Автор:** [Тихомиров Максим Русланович]  
-**Контактная информация:** [awesome.gail@yandex.ru] [https://t.me/Tichomirov2003]
+<h3>Dependencies</h3>
+<p>The microservice requires <em>Go</em> version X.X.X and the dependencies listed in the <code>go.mod</code> file to run.</p>
+
+<h3>Usage</h3>
+<p>To run the microservice, follow these steps:</p>
+<ol>
+    <li>Clone the repository to your local machine.</li>
+    <li>Ensure all dependencies are installed using <code>go mod tidy</code>.</li>
+    <li>Use <code>go build</code> to build the project.</li>
+    <li>Run the executable, specifying the necessary parameters (e.g., data storage flag).</li>
+</ol>
+
+<h3>Author</h3>
+<p>If you have any questions or suggestions for improving functionality, feel free to create <em>issues</em> or submit <em>pull requests</em> to the project repository. <em>Your contribution is welcome!</em></p>
+
+<p><strong>Author</strong>: Tikhomirov Maxim Ruslanovich<br>
+<strong>Contact Information</strong>: <a href="mailto:awesome.gail@yandex.ru">awesome.gail@yandex.ru</a>, <a href="https://t.me/Tichomirov2003">Telegram</a></p>
+
+</body>
+</html>
