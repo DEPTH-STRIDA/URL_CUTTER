@@ -1,6 +1,6 @@
 # URL Shortener Microservice / Микросервис для сокращения URL
 
-[![Русская версия](#русская-версия)](#русская-версия) | [![English Version](#english-version)](#english-version)
+[Русская версия](#русская-версия) | [English Version](#english-version)
 
 ---
 
@@ -133,6 +133,3 @@ If you have any questions or suggestions for improving functionality, feel free 
 
 **Author:** Tikhomirov Maxim Ruslanovich  
 **Contact Information:** [awesome.gail@yandex.ru](mailto:awesome.gail@yandex.ru), [Telegram](https://t.me/Tichomirov2003)
-
-</body>
-</html>
