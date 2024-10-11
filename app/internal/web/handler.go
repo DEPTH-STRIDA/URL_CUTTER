@@ -14,6 +14,14 @@ import (
 )
 
 func (wa *WebApp) HandleGoCut(w http.ResponseWriter, r *http.Request) {
+	err := wa.render(w, "index.tmpl", nil)
+	if err != nil {
+		logger.Log.Error("Не удалось выполнить рендер: " + err.Error())
+		http.Error(w, "Не удалось выполнить рендер: "+err.Error(), http.StatusInternalServerError)
+	}
+}
+
+func (wa *WebApp) HandleMain(w http.ResponseWriter, r *http.Request) {
 	err := wa.render(w, "go-cut.page.tmpl", nil)
 	if err != nil {
 		logger.Log.Error("Не удалось выполнить рендер: " + err.Error())

@@ -13,6 +13,7 @@ func (app *WebApp) SetRoutes() *mux.Router {
 	// Ограничение количества запросов от одного IP
 	router.Use(LimitMiddleware)
 
+	router.HandleFunc("/", app.HandleMain).Methods("GET")
 	router.HandleFunc("/go-cut", app.HandleGoCut).Methods("GET")
 	router.HandleFunc("/rules", app.HandleRule).Methods("GET")
 	router.HandleFunc("/shorten", app.HandleShorten).Methods("POST")
