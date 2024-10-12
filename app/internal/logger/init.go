@@ -5,7 +5,7 @@ var Log Logger
 
 // IniLogger иницилизация комбинированного логгера
 func IniLogger() error {
-	logger, err := NewCombinedLogger("/log")
+	logger, err := NewCombinedLogger("/logs")
 	if err != nil {
 		return err
 	}

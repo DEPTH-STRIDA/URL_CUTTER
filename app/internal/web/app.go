@@ -37,6 +37,7 @@ func (app *WebApp) HandleUpdates() error {
 	logger.Log.Info("Запуск сервера по адрессу " + models.Config.WebAppConfig.AppIP + ":" + models.Config.WebAppConfig.AppPort)
 
 	err := http.ListenAndServe(models.Config.WebAppConfig.AppIP+":"+models.Config.WebAppConfig.AppPort, app.Router)
+	// err := http.ListenAndServe("localhost:"+models.Config.WebAppConfig.AppPort, app.Router)
 	if err != nil {
 		return fmt.Errorf("ошибка при запуске сервера: %v", err)
 	}

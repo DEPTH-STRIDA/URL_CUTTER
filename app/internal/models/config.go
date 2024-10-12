@@ -16,7 +16,7 @@ type ConfigStruct struct {
 }
 
 type WebAppConfig struct {
-	AppIP   string `envconfig:"APP_API" default:"localhost"`
+	AppIP   string `envconfig:"APP_IP" default:"localhost"`
 	AppPort string `envconfig:"APP_PORT" default:"8000"`
 }
 
@@ -24,7 +24,7 @@ type DataBaseConfig struct {
 	UserName     string `envconfig:"DBUSER" required:"true"`
 	Password     string `envconfig:"DBPASS" required:"true"`
 	Host         string `envconfig:"DBHOST" required:"true"`
-	Port         string `envconfig:"DBPORT" required:"true"`
+	Port         string `envconfig:"DBPORT" required:"false"`
 	DataBaseName string `envconfig:"DBNAME" required:"true"`
 }
 
@@ -38,7 +38,7 @@ type CacheConfig struct {
 func InitConfig() error {
 	// Загрузка файла .env
 	if err := godotenv.Load(); err != nil {
-		return err
+		logger.Log.Error("Загрузка приложения без env файла")
 	}
 
 	Config = &ConfigStruct{}
